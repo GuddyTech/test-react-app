@@ -7,9 +7,16 @@ class App extends React.Component {
 
     this.state = 
     {
-      name: "Okorie GoodGod Kalu",
+      name: "Okorie GoodGod",
       skill: "React"
     }
+
+    this.handleChange = (e) => {
+      this.setState({
+        name: e.target.value
+      });
+    }
+
   }
 
 
@@ -17,8 +24,12 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1> Hello World, my name is {this.state.name}  </h1>
+        <form>
+          <input type="text" placeholder="Enter your cute name" onChange={this.handleChange} />
+          <button> Submit </button>
+        </form>
       </div>
-    );
+    )
   }  
 }
 
